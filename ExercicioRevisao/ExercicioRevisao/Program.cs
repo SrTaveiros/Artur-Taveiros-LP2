@@ -10,43 +10,35 @@ namespace ExercicioRevisao
     {
         static void Main(string[] args)
         {
-            string mod;
-            double quil, pot;
+            int veic;
+            string modelo;
+            double km, pot;
 
+            for()
+                Console.WriteLine("Informe o modelo");
+                modelo = Console.ReadLine();
+                Console.WriteLine("Informe a quilometragem");
+                km = double.Parse(Console.ReadLine());
+                Console.WriteLine("Informe a potencia");
+                pot = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("informe o modelo do carro");
-            mod = Console.ReadLine();
-            Console.WriteLine("informe a quilometragem rodada");
-            quil = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("informe a potencia do carro");
-            pot = Convert.ToDouble(Console.ReadLine());
+            string classifRodagem, classifPot;
 
-            if (quil <= 5000)
-            {
-                Console.WriteLine("o carro é novo");
-            }
-            else if (quil > 5000 && quil <= 30000)
-            {
-                Console.WriteLine("o carro é seminovo");
-            }
-            else if (quil > 30000)
-            {
-                Console.WriteLine("o carro é velho");
-            }
-                if (pot > 200)
-                {
-                    Console.WriteLine("o carro é potente");
-                }
-                else if (pot >= 120 && pot <=200)
-                {
-                    Console.WriteLine("o carro é forte");
-                }
-                else if (pot <120)
-                {
-                    Console.WriteLine("o carro é popular");
-                }
+            if (km <= 5000)
+                classifRodagem = "novo";
+            else if (km <= 30000)
+                classifRodagem = "semi novo";
+            else
+                classifRodagem = "velho";
 
-            Console.WriteLine("o modelo do carro é {0}", mod);
+            if (pot > 200)
+                classifPot = "potente";
+            else if (pot < 200 && pot > 120)
+                classifPot = "forte";
+            else
+                classifPot = "popular";
+            Console.WriteLine("{0} - {1} - {2}", modelo, classifRodagem, classifPot);
+            Console.ReadKey();
         }
     }
 }
