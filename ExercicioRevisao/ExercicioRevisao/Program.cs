@@ -10,35 +10,40 @@ namespace ExercicioRevisao
     {
         static void Main(string[] args)
         {
-            int veic;
-            string modelo;
-            double km, pot;
+            int qtd;
+            Console.WriteLine("informe a quantidade de casa");
+            qtd = int.Parse(Console.ReadLine());
 
-            for()
-                Console.WriteLine("Informe o modelo");
-                modelo = Console.ReadLine();
-                Console.WriteLine("Informe a quilometragem");
-                km = double.Parse(Console.ReadLine());
-                Console.WriteLine("Informe a potencia");
-                pot = double.Parse(Console.ReadLine());
+            for (int i = 0; i < qtd; i++)
+            {
+                string nome = Console.ReadLine();
+                double quilometragem = double.Parse(Console.ReadLine());
+                int potencia = int.Parse(Console.ReadLine());
 
+                Console.WriteLine(Classificar(nome, quilometragem, potencia));
+            }
+        }
+
+        public static string Classificar(string mod, double km, int pot)
+        {                              
             string classifRodagem, classifPot;
 
             if (km <= 5000)
-                classifRodagem = "novo";
+                classifRodagem = "Novo";
             else if (km <= 30000)
-                classifRodagem = "semi novo";
+                classifRodagem = "Seminovo";
             else
-                classifRodagem = "velho";
+                classifRodagem = "Velho";
 
-            if (pot > 200)
-                classifPot = "potente";
-            else if (pot < 200 && pot > 120)
-                classifPot = "forte";
+            if (pot < 120)
+                classifPot = "Popular";
+            else if (pot <= 200)
+                classifPot = "Forte";
             else
-                classifPot = "popular";
-            Console.WriteLine("{0} - {1} - {2}", modelo, classifRodagem, classifPot);
-            Console.ReadKey();
+                classifPot = "Potente";
+
+            return String.Format("{0} - {1} - {2}", mod, classifRodagem, classifPot);
         }
+    }
     }
 }
