@@ -8,22 +8,28 @@ namespace ExercicioRevisao
 {
     class Program
     {
+        public struct Carro
+        {
+            public double pot;
+            public string nome;
+            public double quilm;
+        }
+
         static void Main(string[] args)
         {
-            int qtd, pot;
-            string nome;
-            double quilm;
+            Carro c;
+
             Console.WriteLine("informe a quantidade de carros");
             qtd = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < qtd; i++)
             {
                 Console.writeline("informe o modelo do carro");
-                nome = Console.ReadLine();
+                c.nome = Console.ReadLine();
                 Console.WriteLine("informe a quiometragem do veiculo");
-                quilm = double.Parse(Console.ReadLine());
+                c.quilm = double.Parse(Console.ReadLine());
                 Console.WriteLine("informe a potencia do veiculo");
-                pot = int.Parse(Console.ReadLine());
+                c.pot = int.Parse(Console.ReadLine());
 
                 Console.WriteLine(Classificar(nome, quilometragem, potencia));
             }
