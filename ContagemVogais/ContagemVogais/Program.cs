@@ -15,7 +15,7 @@ namespace ConsoleApplication1
 
             vogal = 0;
 
-            Console.WriteLine("Hello, tell me and i will answer the number of PT/BR vowels");
+            Console.WriteLine("informeo texto desejado");
             s = Console.ReadLine();
 
             for (i = 0; i < s.Length; i++)
