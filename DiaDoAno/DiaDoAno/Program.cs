@@ -15,7 +15,7 @@ namespace DiaDoAno
             Console.WriteLine("informe o dia");
             mes = Console.ReadLine();
 
-
+            mes.Split();
         }
     }
 }
