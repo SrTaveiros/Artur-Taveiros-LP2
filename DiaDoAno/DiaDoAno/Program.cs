@@ -11,11 +11,12 @@ namespace DiaDoAno
         {
             string mes;
             int data, dia;
+            char[] sep = { ' ' };
 
             Console.WriteLine("informe o dia");
             mes = Console.ReadLine();
 
-            mes.Split();
+            string[] v = mes.Split();
         }
     }
 }
