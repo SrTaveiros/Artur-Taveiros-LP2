@@ -15,45 +15,54 @@ namespace ExercicioRevisao
             public double quilm;
         }
 
-        static void Main(string[] args)
+            public struct Carro
         {
-            Carro c;
-
-            Console.WriteLine("informe a quantidade de carros");
-            qtd = int.Parse(Console.ReadLine());
-
-            for (int i = 0; i < qtd; i++)
-            {
-                Console.writeline("informe o modelo do carro");
-                c.nome = Console.ReadLine();
-                Console.WriteLine("informe a quiometragem do veiculo");
-                c.quilm = double.Parse(Console.ReadLine());
-                Console.WriteLine("informe a potencia do veiculo");
-                c.pot = int.Parse(Console.ReadLine());
-
-                Console.WriteLine(Classificar(nome, quilometragem, potencia));
-            }
+            public string Modelo;
+            public double Quilometragem;
+            public int Potencia;
         }
 
-        public static string Classificar(string mod, double km, int pot)
-        {                              
+        static void Main(string[] args)
+        {
+            int n;
+            Console.WriteLine("Informe a quantidade de carros"); 
+            n = int.Parse(Console.ReadLine());
+            Carro[] carros = new Carro[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("Informe o modelo do carro {0}", i + 1);
+                carros[i].Modelo = Console.ReadLine();
+                Console.WriteLine("Informe a quilometragem do carro {0}", i + 1);
+                carros[i].Quilometragem = double.Parse(Console.ReadLine());
+                Console.WriteLine("Informe a potência do carro {0}", i + 1);
+                carros[i].Potencia = int.Parse(Console.ReadLine());
+            }
+
+            for (int i = 0; i < n; i++)
+                Console.WriteLine(Classificar(carros[i]));
+        }
+
+        public static string Classificar(Carro c)
+        {
             string classifRodagem, classifPot;
 
-            if (km <= 5000)
+            if (c.Quilometragem <= 5000)
                 classifRodagem = "Novo";
-            else if (km <= 30000)
+            else if (c.Quilometragem <= 30000)
                 classifRodagem = "Seminovo";
             else
                 classifRodagem = "Velho";
 
-            if (pot < 120)
+            if (c.Potencia < 120)
                 classifPot = "Popular";
-            else if (pot <= 200)
+            else if (c.Potencia <= 200)
                 classifPot = "Forte";
             else
                 classifPot = "Potente";
 
-            return String.Format("{0} - {1} - {2}", mod, classifRodagem, classifPot);
+            return String.Format("{0} - {1} - {2}", c.Modelo, classifRodagem, classifPot);
         }
+
     }
 }
