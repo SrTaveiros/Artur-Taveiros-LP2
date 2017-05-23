@@ -13,6 +13,10 @@ namespace ExercicioRevisao
             public string Modelo;
             public double Quilometragem;
             public int Potencia;
+            public string placa;
+            public string cor;
+            public string fabri;
+            public int ano;
         }
 
         static void Main(string[] args)
@@ -30,6 +34,14 @@ namespace ExercicioRevisao
                 carros[i].Quilometragem = double.Parse(Console.ReadLine());
                 Console.WriteLine("Informe a potência do carro {0}", i + 1);
                 carros[i].Potencia = int.Parse(Console.ReadLine());
+                Console.WriteLine("Informe o ano do carro {0}", i + 1);
+                carros[i].ano = int.Parse(Console.ReadLine());
+                Console.WriteLine("Informe a placa do carro {0}", i + 1);
+                carros[i].placa = Console.ReadLine();
+                Console.WriteLine("Informe a cor do carro {0}", i + 1);
+                carros[i].cor = Console.ReadLine();
+                Console.WriteLine("Informe o fabricante do carro {0}", i + 1);
+                carros[i].fabri = Console.ReadLine();
             }
 
             for (int i = 0; i < n; i++)
