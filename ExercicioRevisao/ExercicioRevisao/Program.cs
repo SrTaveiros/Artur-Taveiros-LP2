@@ -8,13 +8,6 @@ namespace ExercicioRevisao
 {
     class Program
     {
-        public struct Carro
-        {
-            public double pot;
-            public string nome;
-            public double quilm;
-        }
-
             public struct Carro
         {
             public string Modelo;
